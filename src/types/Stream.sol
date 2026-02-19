@@ -6,9 +6,9 @@ type Stream is uint256;
 
 using StreamLibrary for Stream global;
 
-/// @notice Initializes a new Stream from a bytes array
+/// @notice Initializes a new {Stream} from a bytes array
 /// @param data The bytes array to stream through
-/// @return stream A Stream object containing start and end pointers
+/// @return stream A {Stream} object containing start and end pointers
 function createStream(bytes memory data) pure returns (Stream stream) {
     assembly ("memory-safe") {
         stream := mload(0x40)
@@ -19,7 +19,7 @@ function createStream(bytes memory data) pure returns (Stream stream) {
 }
 
 /// @title StreamLibrary
-/// @notice Provides efficient low-level read operations for decoding arbitrary-typed data from a Stream
+/// @notice Provides efficient low-level read operations for decoding arbitrary-typed data from a {Stream}
 /// @dev Each function advances the internal cursor automatically
 /// @author fomoweth
 library StreamLibrary {
